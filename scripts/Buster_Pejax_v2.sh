@@ -18,7 +18,7 @@ sudo apt-get -t buster-backports install -y firmware-linux
 sudo apt-get -t buster-backports install -y firmware-linux-nonfree
 sudo apt-get -t buster-backports install -y firmware-misc-nonfree
 
-sudo apt-get install -y openbox obmenu obconf rxvt-unicode mousepad apt-rdepends compton compton-conf firefox-esr tint2 menu xsel mirage pulseaudio numlockx pavucontrol mlocate lxappearance vlc arandr apt-file synaptic doublecmd-common xutils mesa-utils xarchiver htop disk-manager sysstat acpi hardinfo hddtemp wicd xfburn gnome-disk-utility python3-pip python-pip ttf-mscorefonts-installer fonts-ubuntu fonts-ubuntu-console suckless-tools simplescreenrecorder font-manager ranger geany gdebi lightdm fbxkb mpv curl gmrun xscreensaver galternatives pnmixer sxiv scrot xsettingsd ffmpeg git wmctrl bleachbit pm-utils
+sudo apt-get install -y openbox obmenu obconf rxvt-unicode mousepad apt-rdepends compton compton-conf firefox-esr tint2 menu xsel mirage pulseaudio numlockx pavucontrol mlocate lxappearance vlc arandr apt-file synaptic doublecmd-common xutils mesa-utils xarchiver htop disk-manager sysstat acpi hardinfo hddtemp wicd xfburn gnome-disk-utility python3-pip python-pip ttf-mscorefonts-installer fonts-ubuntu fonts-ubuntu-console suckless-tools simplescreenrecorder font-manager ranger geany gdebi lightdm fbxkb mpv curl gmrun xscreensaver galternatives pnmixer sxiv scrot xsettingsd ffmpeg git wmctrl bleachbit pm-utils terminator arc-theme numix-icon-theme nomacs
 
 sudo apt install -y qbittorrent --no-install-recommends
 sudo apt install -y pcmanfm-qt --no-install-recommends
@@ -88,56 +88,60 @@ sudo chmod 777 ~/.config/geany/geany.conf
 ## obmenu-generator
 cp ~/Buster_Pejax_v2/scripts/obmenu-generator.sh ~/.scripts
 
-mkdir ~/projects
-cd ~/projects
-git clone https://github.com/speja969/debian-openbox.git
+# mkdir ~/projects
+# cd ~/projects
+# git clone https://github.com/speja969/debian-openbox.git
 
-sudo chmod --recursive 777 ~/projects
+# sudo chmod --recursive 777 ~/projects
 sudo chmod --recursive 777 ~/.scripts
 
-cd ~/projects/debian-openbox/10_openbox_terminator
-sudo ./install.sh
+# cd ~/projects/debian-openbox/10_openbox_terminator
+# sudo ./install.sh
 
-cd ~/projects/debian-openbox/10_openbox_arc-theme-gtk
-sudo ./install.sh
+# cd ~/projects/debian-openbox/10_openbox_arc-theme-gtk
+# sudo ./install.sh
 
-cd ~/projects/debian-openbox/10_openbox_numix-paper-icons
-sudo ./install.sh
+# cd ~/projects/debian-openbox/10_openbox_numix-paper-icons
+# sudo ./install.sh
 
-cd ~/projects/debian-openbox/install_wpsoffice
-sudo ./install.sh
-cp ~/Buster_Pejax_v2/scripts/install_missing_wps_fonts.sh ~/.scripts
+cd && wget -O wps-office.deb https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/9719/wps-office_11.1.0.9719.XA_amd64.deb
+sudo dpkg -i wps-office.deb
+sudo apt-get -f install && rm wps-office.deb
+cp ~/Buster_Ice/scripts/install_missing_wps_fonts.sh ~/.scripts
 cd ~/.scripts
 sudo ./install_missing_wps_fonts.sh
 
 
-cd ~/projects/debian-openbox/script_install_dt-dark-theme
-sudo ./install.sh
+mkdir /home/$(logname)/.themes          #ako već ne postoji
+sudo chown -R $(logname):$(logname) ~/.themes
+sudo chmod 777 ~/.themes
+cd ~/.themes
+git clone https://gitlab.com/dwt1/dt-dark-theme.git 
 
-cd ~/projects/debian-openbox/10_openbox_conky
-sudo ./install.sh
+# cd ~/projects/debian-openbox/10_openbox_conky
+# sudo ./install.sh
 
-cd ~/projects/debian-openbox/config_shortcut-kill-x
-sudo ./install.sh
+# cd ~/projects/debian-openbox/config_shortcut-kill-x
+# sudo ./install.sh
 
-cd ~/projects/debian-openbox/10_openbox_nomacs-viewer
-sudo ./install.sh
+# cd ~/projects/debian-openbox/10_openbox_nomacs-viewer
+# sudo ./install.sh
 sudo chmod --recursive 777 ~/.config/nomacs
 
-cd ~/projects/debian-openbox/config_disable-services
-sudo ./install.sh
+# cd ~/projects/debian-openbox/config_disable-services
+# sudo ./install.sh
 
 # Copy wallpapers folderes
 sudo cp -r ~/Buster_Pejax_v2/WALLPAPERS/Wallpapers_Debian /usr/share/backgrounds
 sudo cp -r ~/Buster_Pejax_v2/WALLPAPERS/wallpapers-pixabay /usr/share/backgrounds
 
-sudo sed -i 's!wallpapers-pack1!wallpapers-pixabay!' ~/projects/debian-openbox/15_openbox_wallpaper-packs/install.sh
-sudo sed -i 's!bl-colorful-aptenodytes-forsteri-by-nixiepro.png!bridge-2936500_1920.jpg!' ~/projects/debian-openbox/15_openbox_wallpaper-packs/install.sh
-sudo sed -i 's!/usr/share/backgrounds/wallpapers-pack1/bl-colorful-aptenodytes-forsteri-by-nixiepro.png!/usr/share/backgrounds/wallpapers-pixabay/bridge-2936500_1920.jpg!' ~/projects/debian-openbox/15_openbox_wallpaper-packs/bg-saved.cfg
+# sudo sed -i 's!wallpapers-pack1!wallpapers-pixabay!' ~/projects/debian-openbox/15_openbox_wallpaper-packs/install.sh
+# sudo sed -i 's!bl-colorful-aptenodytes-forsteri-by-nixiepro.png!bridge-2936500_1920.jpg!' ~/projects/debian-openbox/15_openbox_wallpaper-packs/install.sh
+# sudo sed -i 's!/usr/share/backgrounds/wallpapers-pack1/bl-colorful-aptenodytes-forsteri-by-nixiepro.png!/usr/share/backgrounds/wallpapers-pixabay/bridge-2936500_1920.jpg!' ~/projects/debian-openbox/15_openbox_wallpaper-packs/bg-saved.cfg
 
 # ACTION: Install nitrogen tool, copy more wallpapers pack and set default wallpaper to all users
-cd ~/projects/debian-openbox/15_openbox_wallpaper-packs
-sudo ./install.sh
+# cd ~/projects/debian-openbox/15_openbox_wallpaper-packs
+# sudo ./install.sh
 
 sudo cp ~/Buster_Pejax_v2/WALLPAPERS/Wallpapers_Debian/lightdm_login.jpg /usr/share/images/desktop-base
 sudo chmod 777 /usr/share/images/desktop-base/lightdm_login.jpg
@@ -164,6 +168,8 @@ sudo sed -i 's!Terminal=true!Terminal=false!' /usr/share/applications/ranger.des
 
 mkdir -p ~/.urxvt/ext
 cp -p ~/Buster_Pejax_v2/ext/* ~/.urxvt/ext/
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/urxvtc 50
+sudo update-alternatives --set x-terminal-emulator /usr/bin/urxvtc
 
 sudo chown -R $(logname):$(logname) /home/$(logname)/
 find /home/$(logname) -name '.*' | xargs sudo chown $(logname):$(logname)
