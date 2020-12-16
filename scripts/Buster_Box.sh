@@ -171,6 +171,10 @@ cp -p ~/Buster_Box/ext/* ~/.urxvt/ext/
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/urxvtc 50
 sudo update-alternatives --set x-terminal-emulator /usr/bin/urxvtc
 
+cd Buster_Box/scripts/openbox_conky
+sudo chmod --recursive 777 .
+sudo ./install.sh
+
 sudo chown -R $(logname):$(logname) /home/$(logname)/
 find /home/$(logname) -name '.*' | xargs sudo chown $(logname):$(logname)
 find /home/$(logname) -type f | xargs sudo chmod 700
