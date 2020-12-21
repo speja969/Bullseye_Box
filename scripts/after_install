@@ -4,11 +4,11 @@
 ## export PATH=$PATH:/sbin
 ## export PATH=$PATH:/usr/sbin
 ## export PATH=$PATH:$HOME/.scripts
-## export PATH=$PATH:/usr/local/bin
 
 ## da unosenje password-a posle sudo komande postane nepotrebno:
-## sudo geany /etc/sudoers
-## speja ALL=(ALL) NOPASSWD: ALL
+## sudo su
+## sudo visudo
+## peja ALL=(ALL) NOPASSWD: ALL
 
 
 ## kreiranje swap fajla        # ako nismo prilikom instalacije formirali swap particiju
