@@ -24,17 +24,17 @@ sudo apt install -y qbittorrent --no-install-recommends
 sudo apt install -y pcmanfm-qt --no-install-recommends
 sudo apt autoremove
 
-cp -R ~/Buster_Box/.config ~/
+cp -R ~/Buster_Box_v2/.config ~/
 
-cp ~/Buster_Box/.Xresources ~/
+cp ~/Buster_Box_v2/.Xresources ~/
 
-cp ~/Buster_Box/keyboard.sh ~/
+cp ~/Buster_Box_v2/keyboard.sh ~/
 
-sudo cp ~/Buster_Box/rs.png /usr/share/fbxkb/images/rs.png
+sudo cp ~/Buster_Box_v2/rs.png /usr/share/fbxkb/images/rs.png
 
 sudo chmod -R 777 ~/.config
 
-sudo cp ~/Buster_Box/ncmpcpp_48x48.png /usr/share/icons
+sudo cp ~/Buster_Box_v2/ncmpcpp_48x48.png /usr/share/icons
 
 sudo chmod 777 /usr/share/icons/ncmpcpp_48x48.png
 
@@ -52,20 +52,20 @@ sudo chmod 777 /usr/share/icons/ncmpcpp_48x48.png
 sudo chmod 777 ~/keyboard.sh
 
 ## debinfo -- prikaz resursa pri otvaranju terminala
-sudo cp ~/Buster_Box/scripts/debinfo /usr/bin
+sudo cp ~/Buster_Box_v2/scripts/debinfo /usr/bin
 sudo chmod 777 /usr/bin/debinfo
 echo debinfo >> ~/.bashrc
 
 ## instalacija comptona
-cp ~/Buster_Box/scripts/install_compton.sh ~/.scripts
+cp ~/Buster_Box_v2/scripts/install_compton.sh ~/.scripts
 mkdir ~/bin
-cp ~/Buster_Box/start-compton.sh ~/bin
+cp ~/Buster_Box_v2/start-compton.sh ~/bin
 sudo chmod --recursive 777 ~/bin
 
 ## instalacija ncmpcpp
 sudo apt install -y mpd ncmpcpp
-cp -R ~/Buster_Box/.ncmpcpp ~/
-cp -R ~/Buster_Box/.mpd ~/
+cp -R ~/Buster_Box_v2/.ncmpcpp ~/
+cp -R ~/Buster_Box_v2/.mpd ~/
 sudo chmod -R 777 ~/.mpd
 sudo chmod -R 777 ~/.ncmpcpp
 echo "Exec=x-terminal-emulator -T 'ncmpcpp' -e ncmpcpp" > /tmp/ncmpcpp_replacement
@@ -74,19 +74,19 @@ sudo sed -i 's!Terminal=true!Terminal=false!' /usr/share/applications/ncmpcpp.de
 echo "Icon=/usr/share/icons/ncmpcpp_48x48.png" >> /usr/share/applications/ncmpcpp.desktop
 
 ## screeny
-cp ~/Buster_Box/scripts/screeny ~/.scripts
+cp ~/Buster_Box_v2/scripts/screeny ~/.scripts
 
 ## script for reinstall youtube-dl
-cp ~/Buster_Box/scripts/reinstall_youtube-dl.sh ~/.scripts
+cp ~/Buster_Box_v2/scripts/reinstall_youtube-dl.sh ~/.scripts
 
 ## Geany theme settings
-cp ~/Buster_Box/scripts/settings_geany ~/.scripts
+cp ~/Buster_Box_v2/scripts/settings_geany ~/.scripts
 cd ~/.scripts
 sudo ./settings_geany
 sudo chmod 777 ~/.config/geany/geany.conf
 
 ## obmenu-generator
-cp ~/Buster_Box/scripts/obmenu-generator.sh ~/.scripts
+cp ~/Buster_Box_v2/scripts/obmenu-generator.sh ~/.scripts
 
 # mkdir ~/projects
 # cd ~/projects
@@ -132,8 +132,8 @@ sudo chmod --recursive 777 ~/.config/nomacs
 # sudo ./install.sh
 
 # Copy wallpapers folderes
-sudo cp -r ~/Buster_Box/WALLPAPERS/Wallpapers_Debian /usr/share/backgrounds
-sudo cp -r ~/Buster_Box/WALLPAPERS/wallpapers-pixabay /usr/share/backgrounds
+sudo cp -r ~/Buster_Box_v2/WALLPAPERS/Wallpapers_Debian /usr/share/backgrounds
+sudo cp -r ~/Buster_Box_v2/WALLPAPERS/wallpapers-pixabay /usr/share/backgrounds
 
 # sudo sed -i 's!wallpapers-pack1!wallpapers-pixabay!' ~/projects/debian-openbox/15_openbox_wallpaper-packs/install.sh
 # sudo sed -i 's!bl-colorful-aptenodytes-forsteri-by-nixiepro.png!bridge-2936500_1920.jpg!' ~/projects/debian-openbox/15_openbox_wallpaper-packs/install.sh
@@ -143,7 +143,7 @@ sudo cp -r ~/Buster_Box/WALLPAPERS/wallpapers-pixabay /usr/share/backgrounds
 # cd ~/projects/debian-openbox/15_openbox_wallpaper-packs
 # sudo ./install.sh
 
-sudo cp ~/Buster_Box/WALLPAPERS/Wallpapers_Debian/lightdm_login.jpg /usr/share/images/desktop-base
+sudo cp ~/Buster_Box_v2/WALLPAPERS/Wallpapers_Debian/lightdm_login.jpg /usr/share/images/desktop-base
 sudo chmod 777 /usr/share/images/desktop-base/lightdm_login.jpg
 sudo sed -i 's!#background=!background=/usr/share/images/desktop-base/lightdm_login.jpg!' /etc/lightdm/lightdm-gtk-greeter.conf
 
@@ -167,15 +167,15 @@ sudo sed -i "s/^.*Exec=ranger.*$/$(cat /tmp/ranger_replacement)/" /usr/share/app
 sudo sed -i 's!Terminal=true!Terminal=false!' /usr/share/applications/ranger.desktop
 
 mkdir -p ~/.urxvt/ext
-cp -p ~/Buster_Box/ext/* ~/.urxvt/ext/
+cp -p ~/Buster_Box_v2/ext/* ~/.urxvt/ext/
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/urxvtc 50
 sudo update-alternatives --set x-terminal-emulator /usr/bin/urxvtc
 
-cd ~/Buster_Box/scripts/openbox_conky
+cd ~/Buster_Box_v2/scripts/openbox_conky
 sudo chmod --recursive 777 .
 sudo ./install.sh
 
-cd ~/Buster_Box/scripts/install_vim/
+cd ~/Buster_Box_v2/scripts/install_vim/
 sudo chmod --recursive 777 .
 sudo ./install.sh
 
