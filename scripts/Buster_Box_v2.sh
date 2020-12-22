@@ -166,6 +166,8 @@ sudo sed -i "s/^.*Exec=ranger.*$/$(cat /tmp/ranger_replacement)/" /usr/share/app
 
 sudo sed -i 's!Terminal=true!Terminal=false!' /usr/share/applications/ranger.desktop
 
+sudo sed -i 's!Exec=/usr/sbin/disk-manager!Exec=sudo /usr/sbin/disk-manager!' /usr/share/applications/disk-manager.desktop
+
 mkdir -p ~/.urxvt/ext
 cp -p ~/Buster_Box_v2/ext/* ~/.urxvt/ext/
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/urxvtc 50
