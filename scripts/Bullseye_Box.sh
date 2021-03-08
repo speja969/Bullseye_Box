@@ -5,36 +5,27 @@ sudo apt update && sudo apt -y upgrade
 default_user=$(logname 2>/dev/null || echo ${SUDO_USER:-${USER}})
 HOME="/home/${default_user}"
 
-
-
 mkdir ~/.scripts
 
-sudo apt-get install -y software-properties-common && sudo apt-add-repository contrib && sudo apt-add-repository non-free && sudo apt-add-repository 'deb http://deb.debian.org/debian buster-backports main contrib non-free'
+sudo apt-get install -y software-properties-common && sudo apt-add-repository contrib && sudo apt-add-repository non-free
 
-sudo apt-get update
-
-sudo apt-get -t buster-backports install -y micro
-sudo apt-get -t buster-backports install -y firmware-linux
-sudo apt-get -t buster-backports install -y firmware-linux-nonfree
-sudo apt-get -t buster-backports install -y firmware-misc-nonfree
-
-sudo apt-get install -y openbox obmenu obconf rxvt-unicode mousepad apt-rdepends compton compton-conf firefox-esr tint2 menu xsel mirage pulseaudio numlockx pavucontrol mlocate lxappearance vlc arandr apt-file synaptic doublecmd-common xutils mesa-utils xarchiver htop disk-manager sysstat acpi hardinfo hddtemp wicd xfburn gnome-disk-utility python3-pip python-pip ttf-mscorefonts-installer fonts-ubuntu fonts-ubuntu-console suckless-tools simplescreenrecorder font-manager ranger geany gdebi lightdm fbxkb mpv curl gmrun xscreensaver galternatives pnmixer sxiv scrot xsettingsd ffmpeg git wmctrl bleachbit pm-utils terminator arc-theme numix-icon-theme nomacs nitrogen policykit-1-gnome udiskie
+sudo apt-get install -y openbox obmenu obconf rxvt-unicode mousepad apt-rdepends compton compton-conf firefox-esr tint2 menu xsel mirage pulseaudio numlockx pavucontrol mlocate lxappearance vlc arandr apt-file synaptic doublecmd-common xutils mesa-utils xarchiver htop disk-manager sysstat acpi hardinfo hddtemp xfburn gnome-disk-utility python3-pip python-pip ttf-mscorefonts-installer fonts-ubuntu fonts-ubuntu-console suckless-tools simplescreenrecorder font-manager ranger geany gdebi lightdm fbxkb mpv curl gmrun xscreensaver galternatives pnmixer sxiv scrot xsettingsd ffmpeg git wmctrl bleachbit pm-utils terminator arc-theme numix-icon-theme nomacs nitrogen policykit-1-gnome udiskie timeshift dctrl-tools micro firmware-linux firmware-linux-nonfree firmware-misc-nonfree network-manager network-manager-gnome
 
 sudo apt install -y qbittorrent --no-install-recommends
 sudo apt install -y pcmanfm-qt --no-install-recommends
 sudo apt autoremove
 
-cp -R ~/Buster_Box_v2/.config ~/
+cp -R ~/Bullseye_Box/.config ~/
 
-cp ~/Buster_Box_v2/.Xresources ~/
+cp ~/Bullseye_Box/.Xresources ~/
 
-cp ~/Buster_Box_v2/keyboard.sh ~/
+cp ~/Bullseye_Box/keyboard.sh ~/
 
-sudo cp ~/Buster_Box_v2/rs.png /usr/share/fbxkb/images/rs.png
+sudo cp ~/Bullseye_Box/rs.png /usr/share/fbxkb/images/rs.png
 
 sudo chmod -R 777 ~/.config
 
-sudo cp ~/Buster_Box_v2/ncmpcpp_48x48.png /usr/share/icons
+sudo cp ~/Bullseye_Box/ncmpcpp_48x48.png /usr/share/icons
 
 sudo chmod 777 /usr/share/icons/ncmpcpp_48x48.png
 
@@ -52,20 +43,20 @@ sudo chmod 777 /usr/share/icons/ncmpcpp_48x48.png
 sudo chmod 777 ~/keyboard.sh
 
 ## debinfo -- prikaz resursa pri otvaranju terminala
-sudo cp ~/Buster_Box_v2/scripts/debinfo /usr/bin
+sudo cp ~/Bullseye_Box/scripts/debinfo /usr/bin
 sudo chmod 777 /usr/bin/debinfo
 echo debinfo >> ~/.bashrc
 
 ## instalacija comptona
-cp ~/Buster_Box_v2/scripts/install_compton.sh ~/.scripts
+cp ~/Bullseye_Box/scripts/install_compton.sh ~/.scripts
 mkdir ~/bin
-cp ~/Buster_Box_v2/start-compton.sh ~/bin
+cp ~/Bullseye_Box/start-compton.sh ~/bin
 sudo chmod --recursive 777 ~/bin
 
 ## instalacija ncmpcpp
 sudo apt install -y mpd ncmpcpp
-cp -R ~/Buster_Box_v2/.ncmpcpp ~/
-cp -R ~/Buster_Box_v2/.mpd ~/
+cp -R ~/Bullseye_Box/.ncmpcpp ~/
+cp -R ~/Bullseye_Box/.mpd ~/
 sudo chmod -R 777 ~/.mpd
 sudo chmod -R 777 ~/.ncmpcpp
 echo "Exec=x-terminal-emulator -T 'ncmpcpp' -e ncmpcpp" > /tmp/ncmpcpp_replacement
@@ -74,19 +65,19 @@ sudo sed -i 's!Terminal=true!Terminal=false!' /usr/share/applications/ncmpcpp.de
 echo "Icon=/usr/share/icons/ncmpcpp_48x48.png" >> /usr/share/applications/ncmpcpp.desktop
 
 ## screeny
-cp ~/Buster_Box_v2/scripts/screeny ~/.scripts
+cp ~/Bullseye_Box/scripts/screeny ~/.scripts
 
 ## script for reinstall youtube-dl
-cp ~/Buster_Box_v2/scripts/reinstall_youtube-dl.sh ~/.scripts
+cp ~/Bullseye_Box/scripts/reinstall_youtube-dl.sh ~/.scripts
 
 ## Geany theme settings
-cp ~/Buster_Box_v2/scripts/settings_geany ~/.scripts
+cp ~/Bullseye_Box/scripts/settings_geany ~/.scripts
 cd ~/.scripts
 sudo ./settings_geany
 sudo chmod 777 ~/.config/geany/geany.conf
 
 ## obmenu-generator
-cp ~/Buster_Box_v2/scripts/obmenu-generator.sh ~/.scripts
+cp ~/Bullseye_Box/scripts/obmenu-generator.sh ~/.scripts
 
 # mkdir ~/projects
 # cd ~/projects
@@ -132,8 +123,8 @@ sudo chmod --recursive 777 ~/.config/nomacs
 # sudo ./install.sh
 
 # Copy wallpapers folderes
-sudo cp -r ~/Buster_Box_v2/WALLPAPERS/Wallpapers_Debian /usr/share/backgrounds
-sudo cp -r ~/Buster_Box_v2/WALLPAPERS/wallpapers-pixabay /usr/share/backgrounds
+sudo cp -r ~/Bullseye_Box/WALLPAPERS/Wallpapers_Debian /usr/share/backgrounds
+sudo cp -r ~/Bullseye_Box/WALLPAPERS/wallpapers-pixabay /usr/share/backgrounds
 
 # sudo sed -i 's!wallpapers-pack1!wallpapers-pixabay!' ~/projects/debian-openbox/15_openbox_wallpaper-packs/install.sh
 # sudo sed -i 's!bl-colorful-aptenodytes-forsteri-by-nixiepro.png!bridge-2936500_1920.jpg!' ~/projects/debian-openbox/15_openbox_wallpaper-packs/install.sh
@@ -143,7 +134,7 @@ sudo cp -r ~/Buster_Box_v2/WALLPAPERS/wallpapers-pixabay /usr/share/backgrounds
 # cd ~/projects/debian-openbox/15_openbox_wallpaper-packs
 # sudo ./install.sh
 
-sudo cp ~/Buster_Box_v2/WALLPAPERS/Wallpapers_Debian/lightdm_login.jpg /usr/share/images/desktop-base
+sudo cp ~/Bullseye_Box/WALLPAPERS/Wallpapers_Debian/lightdm_login.jpg /usr/share/images/desktop-base
 sudo chmod 777 /usr/share/images/desktop-base/lightdm_login.jpg
 sudo sed -i 's!#background=!background=/usr/share/images/desktop-base/lightdm_login.jpg!' /etc/lightdm/lightdm-gtk-greeter.conf
 
@@ -169,15 +160,15 @@ sudo sed -i 's!Terminal=true!Terminal=false!' /usr/share/applications/ranger.des
 sudo sed -i 's!Exec=su-to-root -X -c /usr/sbin/disk-manager!Exec=sudo /usr/sbin/disk-manager!' /usr/share/applications/disk-manager.desktop
 
 mkdir -p ~/.urxvt/ext
-cp -p ~/Buster_Box_v2/ext/* ~/.urxvt/ext/
+cp -p ~/Bullseye_Box/ext/* ~/.urxvt/ext/
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/urxvtc 50
 sudo update-alternatives --set x-terminal-emulator /usr/bin/urxvtc
 
-cd ~/Buster_Box_v2/scripts/openbox_conky
+cd ~/Bullseye_Box/scripts/openbox_conky
 sudo chmod --recursive 777 .
 sudo ./install.sh
 
-cd ~/Buster_Box_v2/scripts/install_vim/
+cd ~/Bullseye_Box/scripts/install_vim/
 sudo chmod --recursive 777 .
 sudo ./install.sh
 
