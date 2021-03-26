@@ -11,7 +11,7 @@ mkdir ~/.scripts
 
 sudo apt-get install -y openbox obconf rxvt-unicode mousepad firefox-esr lightdm fbxkb terminator tint2  
 
-sudo apt-get install -y apt-rdepends compton compton-conf menu xsel mirage pulseaudio numlockx pavucontrol mlocate lxappearance vlc arandr apt-file synaptic doublecmd-common xutils mesa-utils xarchiver htop sysstat acpi hardinfo hddtemp xfburn gnome-disk-utility python3-pip ttf-mscorefonts-installer fonts-ubuntu fonts-ubuntu-console suckless-tools simplescreenrecorder ranger geany gdebi mpv curl gmrun xscreensaver galternatives pnmixer sxiv scrot xsettingsd git wmctrl bleachbit pm-utils arc-theme numix-icon-theme nomacs nitrogen policykit-1-gnome udiskie timeshift dctrl-tools micro firmware-linux firmware-linux-nonfree firmware-misc-nonfree network-manager network-manager-gnome net-tools nmap resolvconf dnsutils libglu1-mesa
+sudo apt-get install -y apt-rdepends compton compton-conf menu xsel mirage pulseaudio numlockx pavucontrol mlocate lxappearance vlc arandr apt-file synaptic doublecmd-common xutils mesa-utils xarchiver htop sysstat acpi hardinfo hddtemp xfburn gnome-disk-utility python3-pip ttf-mscorefonts-installer fonts-ubuntu fonts-ubuntu-console suckless-tools simplescreenrecorder ranger geany gdebi mpv curl gmrun xscreensaver galternatives pnmixer sxiv scrot xsettingsd git wmctrl bleachbit pm-utils arc-theme numix-icon-theme nitrogen policykit-1-gnome udiskie timeshift dctrl-tools micro firmware-linux firmware-linux-nonfree firmware-misc-nonfree network-manager network-manager-gnome net-tools nmap resolvconf dnsutils libglu1-mesa
 
 sudo apt install -y qbittorrent --no-install-recommends
 sudo apt install -y pcmanfm-qt --no-install-recommends
