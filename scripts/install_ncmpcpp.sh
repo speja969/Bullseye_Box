@@ -11,9 +11,9 @@ mkdir ~/.mpd
 
 mkdir ~/.ncmpcpp
 
-cp ~/Buster_Pejax/dotfiles/config ~/.ncmpcpp
+cp ~/Bullseye_Box/dotfiles/config ~/.ncmpcpp
 
-cp ~/Buster_Pejax/dotfiles/mpd.conf ~/.mpd
+cp ~/Bullseye_Box/dotfiles/mpd.conf ~/.mpd
 
 touch ~/.mpd/mpd.db ~/.mpd/mpd.log ~/.mpd/mpd.pid
 
