@@ -2,10 +2,7 @@
 
 sudo apt update && sudo apt -y upgrade
 
-default_user=$(logname 2>/dev/null || echo ${SUDO_USER:-${USER}})
-HOME="/home/${default_user}"
-
-mkdir ~/.scripts
+mkdir /home/$(logname)/.scripts
 
 #sudo apt-get install -y software-properties-common && sudo apt-add-repository contrib && sudo apt-add-repository non-free
 
@@ -14,17 +11,17 @@ sudo apt-get install -y openbox obconf rxvt-unicode mousepad firefox-esr lightdm
 sudo apt install -y qbittorrent --no-install-recommends
 sudo apt install -y pcmanfm-qt --no-install-recommends
 
-cp -R ~/Bullseye_Box/.config ~/
+cp -R /home/$(logname)/Bullseye_Box/.config /home/$(logname)/
 
-cp ~/Bullseye_Box/.Xresources ~/
+cp /home/$(logname)/Bullseye_Box/.Xresources /home/$(logname)/
 
-cp ~/Bullseye_Box/keyboard.sh ~/
+cp /home/$(logname)/Bullseye_Box/keyboard.sh /home/$(logname)/
 
-sudo cp ~/Bullseye_Box/rs.png /usr/share/fbxkb/images/rs.png
+sudo cp /home/$(logname)/Bullseye_Box/rs.png /usr/share/fbxkb/images/rs.png
 
-sudo chmod -R 777 ~/.config
+sudo chmod -R 777 /home/$(logname)/.config
 
-sudo cp ~/Bullseye_Box/ncmpcpp_48x48.png /usr/share/icons
+sudo cp /home/$(logname)/Bullseye_Box/ncmpcpp_48x48.png /usr/share/icons
 
 sudo chmod 777 /usr/share/icons/ncmpcpp_48x48.png
 
@@ -39,51 +36,51 @@ sudo chmod 777 /usr/share/icons/ncmpcpp_48x48.png
 # korekcija autorizacije za doublecmd
 # sudo sed -i 's/<allow_active>auth_admin_keep/<allow_active>yes/' /usr/share/polkit-1/actions/org.doublecmd.root.policy
 
-sudo chmod 777 ~/keyboard.sh
+sudo chmod 777 /home/$(logname)/keyboard.sh
 
 ## debinfo -- prikaz resursa pri otvaranju terminala
-sudo cp ~/Bullseye_Box/scripts/debinfo /usr/bin
+sudo cp /home/$(logname)/Bullseye_Box/scripts/debinfo /usr/bin
 sudo chmod 777 /usr/bin/debinfo
-echo debinfo >> ~/.bashrc
+echo debinfo >> /home/$(logname)/.bashrc
 
 ## instalacija comptona
-cp ~/Bullseye_Box/scripts/install_compton.sh ~/.scripts
-mkdir ~/bin
-cp ~/Bullseye_Box/start-compton.sh ~/bin
-sudo chmod --recursive 777 ~/bin
+cp /home/$(logname)/Bullseye_Box/scripts/install_compton.sh /home/$(logname)/.scripts
+mkdir /home/$(logname)/bin
+cp /home/$(logname)/Bullseye_Box/start-compton.sh /home/$(logname)/bin
+sudo chmod --recursive 777 /home/$(logname)/bin
 
 ## instalacija ncmpcpp
 sudo apt install -y mpd ncmpcpp
-cp -R ~/Bullseye_Box/.ncmpcpp ~/
-cp -R ~/Bullseye_Box/.mpd ~/
-sudo chmod -R 777 ~/.mpd
-sudo chmod -R 777 ~/.ncmpcpp
+cp -R /home/$(logname)/Bullseye_Box/.ncmpcpp /home/$(logname)/
+cp -R ~/Bullseye_Box/.mpd /home/$(logname)/
+sudo chmod -R 777 /home/$(logname)/.mpd
+sudo chmod -R 777 /home/$(logname)/.ncmpcpp
 echo "Exec=x-terminal-emulator -T 'ncmpcpp' -e ncmpcpp" > /tmp/ncmpcpp_replacement
 sudo sed -i "s/^.*Exec=ncmpcpp.*$/$(cat /tmp/ncmpcpp_replacement)/" /usr/share/applications/ncmpcpp.desktop
 sudo sed -i 's!Terminal=true!Terminal=false!' /usr/share/applications/ncmpcpp.desktop
 echo "Icon=/usr/share/icons/ncmpcpp_48x48.png" >> /usr/share/applications/ncmpcpp.desktop
 
 ## screeny
-cp ~/Bullseye_Box/scripts/screeny ~/.scripts
+cp /home/$(logname)/Bullseye_Box/scripts/screeny /home/$(logname)/.scripts
 
 ## script for reinstall youtube-dl
-cp ~/Bullseye_Box/scripts/reinstall_youtube-dl.sh ~/.scripts
+cp /home/$(logname)/Bullseye_Box/scripts/reinstall_youtube-dl.sh /home/$(logname)/.scripts
 
 ## Geany theme settings
-cp ~/Bullseye_Box/scripts/settings_geany ~/.scripts
-cd ~/.scripts
+cp /home/$(logname)/Bullseye_Box/scripts/settings_geany /home/$(logname)/.scripts
+cd /home/$(logname)/.scripts
 sudo ./settings_geany
-sudo chmod 777 ~/.config/geany/geany.conf
+sudo chmod 777 /home/$(logname)/.config/geany/geany.conf
 
 ## obmenu-generator
-cp ~/Bullseye_Box/scripts/obmenu-generator.sh ~/.scripts
+cp /home/$(logname)/Bullseye_Box/scripts/obmenu-generator.sh /home/$(logname)/.scripts
 
 # mkdir ~/projects
 # cd ~/projects
 # git clone https://github.com/speja969/debian-openbox.git
 
 # sudo chmod --recursive 777 ~/projects
-sudo chmod --recursive 777 ~/.scripts
+sudo chmod --recursive 777 /home/$(logname)/.scripts
 
 # cd ~/projects/debian-openbox/10_openbox_terminator
 # sudo ./install.sh
@@ -97,14 +94,14 @@ sudo chmod --recursive 777 ~/.scripts
 cd && wget -O wps-office.deb https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/10161/wps-office_11.1.0.10161.XA_amd64.deb
 sudo dpkg -i wps-office.deb
 sudo apt-get -f install && rm wps-office.deb
-cp ~/Bullseye_Box/scripts/install_missing_wps_fonts.sh ~/.scripts
-cd ~/.scripts
+cp /home/$(logname)/Bullseye_Box/scripts/install_missing_wps_fonts.sh /home/$(logname)/.scripts
+cd /home/$(logname)/.scripts
 sudo ./install_missing_wps_fonts.sh
 
 
 mkdir /home/$(logname)/.themes          #ako već ne postoji
 sudo chown -R $(logname):$(logname) /home/$(logname)/.themes
-sudo chmod 777 ~/.themes
+sudo chmod 777 /home/$(logname)/.themes
 cd /home/$(logname)/.themes
 git clone https://gitlab.com/dwt1/dt-dark-theme.git 
 
@@ -119,8 +116,8 @@ git clone https://gitlab.com/dwt1/dt-dark-theme.git
 # sudo ./install.sh
 
 # Copy wallpapers folderes
-sudo cp -r ~/Bullseye_Box/WALLPAPERS/Wallpapers_Debian /usr/share/backgrounds
-sudo cp -r ~/Bullseye_Box/WALLPAPERS/wallpapers-pixabay /usr/share/backgrounds
+sudo cp -r /home/$(logname)/Bullseye_Box/WALLPAPERS/Wallpapers_Debian /usr/share/backgrounds
+sudo cp -r /home/$(logname)/Bullseye_Box/WALLPAPERS/wallpapers-pixabay /usr/share/backgrounds
 
 # sudo sed -i 's!wallpapers-pack1!wallpapers-pixabay!' ~/projects/debian-openbox/15_openbox_wallpaper-packs/install.sh
 # sudo sed -i 's!bl-colorful-aptenodytes-forsteri-by-nixiepro.png!bridge-2936500_1920.jpg!' ~/projects/debian-openbox/15_openbox_wallpaper-packs/install.sh
@@ -130,7 +127,7 @@ sudo cp -r ~/Bullseye_Box/WALLPAPERS/wallpapers-pixabay /usr/share/backgrounds
 # cd ~/projects/debian-openbox/15_openbox_wallpaper-packs
 # sudo ./install.sh
 
-sudo cp ~/Bullseye_Box/WALLPAPERS/Wallpapers_Debian/lightdm_login.jpg /usr/share/images/desktop-base
+sudo cp /home/$(logname)/Bullseye_Box/WALLPAPERS/Wallpapers_Debian/lightdm_login.jpg /usr/share/images/desktop-base
 sudo chmod 777 /usr/share/images/desktop-base/lightdm_login.jpg
 sudo sed -i 's!#background=!background=/usr/share/images/desktop-base/lightdm_login.jpg!' /etc/lightdm/lightdm-gtk-greeter.conf
 
@@ -153,12 +150,12 @@ sudo sed -i "s/^.*Exec=ranger.*$/$(cat /tmp/ranger_replacement)/" /usr/share/app
 
 sudo sed -i 's!Terminal=true!Terminal=false!' /usr/share/applications/ranger.desktop
 
-mkdir -p ~/.urxvt/ext
-cp -p ~/Bullseye_Box/ext/* ~/.urxvt/ext/
+mkdir -p /home/$(logname)/.urxvt/ext
+cp -p /home/$(logname)/Bullseye_Box/ext/* /home/$(logname)/.urxvt/ext/
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/urxvtc 50
 sudo update-alternatives --set x-terminal-emulator /usr/bin/urxvtc
 
-cd ~/Bullseye_Box/scripts/openbox_conky
+cd /home/$(logname)/Bullseye_Box/scripts/openbox_conky
 sudo chmod --recursive 777 .
 sudo ./install.sh
 
