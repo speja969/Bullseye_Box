@@ -9,13 +9,12 @@ mkdir ~/.scripts
 
 #sudo apt-get install -y software-properties-common && sudo apt-add-repository contrib && sudo apt-add-repository non-free
 
-sudo apt-get install -y openbox obconf rxvt-unicode mousepad firefox-esr lightdm fbxkb terminator tint2 ttf-mscorefonts-installer  
-
-sudo apt-get install -y apt-rdepends compton compton-conf menu xsel mirage pulseaudio numlockx pavucontrol mlocate lxappearance vlc arandr apt-file synaptic doublecmd-common xutils mesa-utils xarchiver htop sysstat acpi hardinfo hddtemp xfburn gnome-disk-utility python3-pip fonts-ubuntu fonts-ubuntu-console suckless-tools simplescreenrecorder ranger geany gdebi mpv curl gmrun xscreensaver galternatives pnmixer sxiv scrot xsettingsd git wmctrl bleachbit pm-utils arc-theme numix-icon-theme nitrogen policykit-1-gnome udiskie timeshift dctrl-tools micro firmware-linux firmware-linux-nonfree firmware-misc-nonfree network-manager network-manager-gnome net-tools nmap resolvconf dnsutils libglu1-mesa
+sudo apt-get install -y openbox obconf rxvt-unicode mousepad firefox-esr lightdm fbxkb terminator tint2 ttf-mscorefonts-installer
 
 sudo apt install -y qbittorrent --no-install-recommends
 sudo apt install -y pcmanfm-qt --no-install-recommends
-sudo apt autoremove
+
+sudo apt-get install -y apt-rdepends compton compton-conf menu xsel mirage pulseaudio numlockx pavucontrol mlocate lxappearance vlc arandr apt-file synaptic doublecmd-common xutils mesa-utils xarchiver htop sysstat acpi hardinfo hddtemp xfburn gnome-disk-utility python3-pip fonts-ubuntu fonts-ubuntu-console suckless-tools simplescreenrecorder ranger geany gdebi mpv curl gmrun xscreensaver galternatives pnmixer sxiv scrot xsettingsd git wmctrl bleachbit pm-utils arc-theme numix-icon-theme nitrogen policykit-1-gnome udiskie timeshift dctrl-tools micro firmware-linux firmware-linux-nonfree firmware-misc-nonfree network-manager network-manager-gnome net-tools nmap resolvconf dnsutils libglu1-mesa
 
 cp -R ~/Bullseye_Box/.config ~/
 
@@ -155,8 +154,6 @@ echo "Exec=x-terminal-emulator -T 'ranger task manager' -e ranger" > /tmp/ranger
 sudo sed -i "s/^.*Exec=ranger.*$/$(cat /tmp/ranger_replacement)/" /usr/share/applications/ranger.desktop
 
 sudo sed -i 's!Terminal=true!Terminal=false!' /usr/share/applications/ranger.desktop
-
-sudo sed -i 's!Exec=su-to-root -X -c /usr/sbin/disk-manager!Exec=sudo /usr/sbin/disk-manager!' /usr/share/applications/disk-manager.desktop
 
 mkdir -p ~/.urxvt/ext
 cp -p ~/Bullseye_Box/ext/* ~/.urxvt/ext/
