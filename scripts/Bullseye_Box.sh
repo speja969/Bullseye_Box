@@ -6,10 +6,11 @@ mkdir /home/$(logname)/.scripts
 
 #sudo apt-get install -y software-properties-common && sudo apt-add-repository contrib && sudo apt-add-repository non-free
 
-sudo apt-get install -y openbox obconf rxvt-unicode mousepad firefox-esr lightdm fbxkb terminator tint2 ttf-mscorefonts-installer apt-rdepends compton compton-conf menu xsel mirage pulseaudio numlockx pavucontrol mlocate lxappearance vlc arandr apt-file synaptic doublecmd-common xutils mesa-utils xarchiver htop sysstat acpi hardinfo hddtemp xfburn gnome-disk-utility python3-pip fonts-ubuntu fonts-ubuntu-console suckless-tools simplescreenrecorder ranger geany gdebi mpv curl gmrun xscreensaver galternatives pnmixer sxiv scrot xsettingsd git wmctrl bleachbit pm-utils arc-theme numix-icon-theme nitrogen policykit-1-gnome udiskie timeshift dctrl-tools micro firmware-linux firmware-linux-nonfree firmware-misc-nonfree network-manager network-manager-gnome net-tools nmap resolvconf dnsutils libglu1-mesa
-
-sudo apt install -y qbittorrent --no-install-recommends
+sudo apt install -y ttf-mscorefonts-installer qbittorrent --no-install-recommends
 sudo apt install -y pcmanfm-qt --no-install-recommends
+
+sudo apt-get install -y openbox obconf rxvt-unicode mousepad firefox-esr lightdm fbxkb terminator tint2 apt-rdepends compton compton-conf menu xsel mirage pulseaudio numlockx pavucontrol mlocate lxappearance vlc arandr apt-file synaptic doublecmd-common xutils mesa-utils xarchiver htop sysstat acpi hardinfo hddtemp xfburn gnome-disk-utility python3-pip fonts-ubuntu fonts-ubuntu-console suckless-tools simplescreenrecorder ranger geany gdebi mpv curl gmrun xscreensaver galternatives pnmixer sxiv scrot xsettingsd git wmctrl bleachbit pm-utils arc-theme numix-icon-theme nitrogen policykit-1-gnome udiskie timeshift dctrl-tools micro firmware-linux firmware-linux-nonfree firmware-misc-nonfree network-manager network-manager-gnome net-tools nmap resolvconf dnsutils libglu1-mesa
+
 
 cp -R /home/$(logname)/Bullseye_Box/.config /home/$(logname)/
 
@@ -52,7 +53,7 @@ sudo chmod --recursive 777 /home/$(logname)/bin
 ## instalacija ncmpcpp
 sudo apt install -y mpd ncmpcpp
 cp -R /home/$(logname)/Bullseye_Box/.ncmpcpp /home/$(logname)/
-cp -R ~/Bullseye_Box/.mpd /home/$(logname)/
+cp -R /home/$(logname)/Bullseye_Box/.mpd /home/$(logname)/
 sudo chmod -R 777 /home/$(logname)/.mpd
 sudo chmod -R 777 /home/$(logname)/.ncmpcpp
 echo "Exec=x-terminal-emulator -T 'ncmpcpp' -e ncmpcpp" > /tmp/ncmpcpp_replacement
