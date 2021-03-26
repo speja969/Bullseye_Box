@@ -1,5 +1,5 @@
-## **Bulseye_Box** (instructions in Serbian)
-### *Debian Bulseye sa OpenBox WM*
+## **Bullseye_Box** (instructions in Serbian)
+### *Debian Bullseye sa OpenBox WM*
 
 1. Potrebno je prvo skinuti sa Debianovog sajta ISO instalacioni fajl:
     *  https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/weekly-builds/amd64/iso-cd/firmware-testing-amd64-netinst.iso
@@ -13,16 +13,16 @@
 _` sudo apt update && sudo apt full-upgrade`_
 1. instaliranje git-a  
 _`sudo apt install git`_
-1. kloniranje git repozitorijuma Bulseye_Box  
+1. kloniranje git repozitorijuma Bullseye_Box  
 _`git clone https://github.com/speja969/Bulseye_Box.git`_
 1. promena aktivnog direktorijuma  
-_`cd Bulseye_Box`_
+_`cd Bullseye_Box`_
 1. maksimalno podizanje ovlašćenja pristupa repozitorijumu Buster_Pejax_v2 rekurzivno  
 _`sudo chmod --recursive 777 .`_
 1. promena aktivnog direktorijuma  
 _`cd scripts`_
-1. Startovanje skripte _Bulseye_Box.sh_  
-_`sudo ./Bulseye_Box.sh`_
+1. Startovanje skripte _Bullseye_Box.sh_  
+_`sudo ./Bullseye_Box.sh`_
 1. Restart  
 _`sudo reboot`_
 1. Posle restarta potrebno je u konfiguracionim fajlovima **ncmpcpp** (_`~/.mpd/mpd.conf`_ i _`~/.ncmpcpp/config`_)  
