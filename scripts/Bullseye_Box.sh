@@ -98,7 +98,7 @@ sudo chmod --recursive 777 ~/.scripts
 cd && wget -O wps-office.deb https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/9719/wps-office_11.1.0.9719.XA_amd64.deb
 sudo dpkg -i wps-office.deb
 sudo apt-get -f install && rm wps-office.deb
-cp ~/Buster_Ice/scripts/install_missing_wps_fonts.sh ~/.scripts
+cp ~/Bullseye_Box/scripts/install_missing_wps_fonts.sh ~/.scripts
 cd ~/.scripts
 sudo ./install_missing_wps_fonts.sh
 
