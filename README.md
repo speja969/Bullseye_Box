@@ -14,7 +14,7 @@ _` sudo apt update && sudo apt full-upgrade`_
 1. instaliranje git-a  
 _`sudo apt install git`_
 1. kloniranje git repozitorijuma Bullseye_Box  
-_`git clone https://github.com/speja969/Bulseye_Box.git`_
+_`git clone https://github.com/speja969/Bullseye_Box.git`_
 1. promena aktivnog direktorijuma  
 _`cd Bullseye_Box`_
 1. maksimalno podizanje ovlašćenja pristupa repozitorijumu Bullseye_Box rekurzivno  
