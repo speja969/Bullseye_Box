@@ -117,9 +117,6 @@ git clone https://gitlab.com/dwt1/dt-dark-theme.git
 # cd ~/projects/debian-openbox/config_shortcut-kill-x
 # sudo ./install.sh
 
-# cd ~/projects/debian-openbox/10_openbox_nomacs-viewer
-# sudo ./install.sh
-sudo chmod --recursive 777 ~/.config/nomacs
 
 # cd ~/projects/debian-openbox/config_disable-services
 # sudo ./install.sh
