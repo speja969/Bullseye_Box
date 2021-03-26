@@ -17,7 +17,7 @@ _`sudo apt install git`_
 _`git clone https://github.com/speja969/Bulseye_Box.git`_
 1. promena aktivnog direktorijuma  
 _`cd Bullseye_Box`_
-1. maksimalno podizanje ovlašćenja pristupa repozitorijumu Buster_Pejax_v2 rekurzivno  
+1. maksimalno podizanje ovlašćenja pristupa repozitorijumu Bullseye_Box rekurzivno  
 _`sudo chmod --recursive 777 .`_
 1. promena aktivnog direktorijuma  
 _`cd scripts`_
