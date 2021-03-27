@@ -18,7 +18,7 @@ cp /home/$(logname)/Bullseye_Box/.Xresources /home/$(logname)/
 
 cp /home/$(logname)/Bullseye_Box/keyboard.sh /home/$(logname)/
 
-sudo cp /home/$(logname)/Bullseye_Box/rs.png /usr/share/fbxkb/images/rs.png
+#sudo cp /home/$(logname)/Bullseye_Box/rs.png /usr/share/fbxkb/images/rs.png
 
 sudo chmod -R 777 /home/$(logname)/.config
 
