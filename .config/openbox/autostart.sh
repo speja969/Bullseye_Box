@@ -9,9 +9,7 @@ export PATH="${PATH}:$HOME/.scripts"
 
 tint2 &
 
-~/keyboard.sh
-
-fbxkb &
+setxkbmap -layout "us,rs(latin),rs" -option "grp:alt_shift_toggle" &
 
 urxvtd -q &
 
