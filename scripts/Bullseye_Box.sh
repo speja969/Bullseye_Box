@@ -51,7 +51,7 @@ cp /home/$(logname)/Bullseye_Box/start-compton.sh /home/$(logname)/bin
 sudo chmod --recursive 777 /home/$(logname)/bin
 
 ## instalacija ncmpcpp
-sudo apt install -y mpd ncmpcpp
+sudo apt-get install -y mpd ncmpcpp
 cp -R /home/$(logname)/Bullseye_Box/.ncmpcpp /home/$(logname)/
 cp -R /home/$(logname)/Bullseye_Box/.mpd /home/$(logname)/
 sudo chmod -R 777 /home/$(logname)/.mpd
@@ -63,6 +63,7 @@ echo "Icon=/usr/share/icons/ncmpcpp_48x48.png" >> /usr/share/applications/ncmpcp
 
 ## screeny
 cp /home/$(logname)/Bullseye_Box/scripts/screeny /home/$(logname)/.scripts
+sudo chmod +x /home/$(logname)/.scripts/screeny
 
 ## script for reinstall youtube-dl
 cp /home/$(logname)/Bullseye_Box/scripts/reinstall_youtube-dl.sh /home/$(logname)/.scripts
@@ -70,11 +71,13 @@ cp /home/$(logname)/Bullseye_Box/scripts/reinstall_youtube-dl.sh /home/$(logname
 ## Geany theme settings
 cp /home/$(logname)/Bullseye_Box/scripts/settings_geany /home/$(logname)/.scripts
 cd /home/$(logname)/.scripts
+sudo chmod +x /home/$(logname)/.scripts/settings_geany
 sudo ./settings_geany
 sudo chmod 777 /home/$(logname)/.config/geany/geany.conf
 
 ## obmenu-generator
 cp /home/$(logname)/Bullseye_Box/scripts/obmenu-generator.sh /home/$(logname)/.scripts
+sudo chmod +x /home/$(logname)/.scripts/obmenu-generator.sh
 
 # mkdir ~/projects
 # cd ~/projects
@@ -102,7 +105,7 @@ sudo ./install_missing_wps_fonts.sh
 
 mkdir /home/$(logname)/.themes          #ako već ne postoji
 sudo chown -R $(logname):$(logname) /home/$(logname)/.themes
-sudo chmod 777 /home/$(logname)/.themes
+sudo chmod -R 777 /home/$(logname)/.themes
 cd /home/$(logname)/.themes
 git clone https://gitlab.com/dwt1/dt-dark-theme.git 
 
@@ -119,6 +122,7 @@ git clone https://gitlab.com/dwt1/dt-dark-theme.git
 # Copy wallpapers folderes
 sudo cp -r /home/$(logname)/Bullseye_Box/WALLPAPERS/Wallpapers_Debian /usr/share/backgrounds
 sudo cp -r /home/$(logname)/Bullseye_Box/WALLPAPERS/wallpapers-pixabay /usr/share/backgrounds
+sudo chmod -R 777 /usr/share/backgrounds
 
 # sudo sed -i 's!wallpapers-pack1!wallpapers-pixabay!' ~/projects/debian-openbox/15_openbox_wallpaper-packs/install.sh
 # sudo sed -i 's!bl-colorful-aptenodytes-forsteri-by-nixiepro.png!bridge-2936500_1920.jpg!' ~/projects/debian-openbox/15_openbox_wallpaper-packs/install.sh
@@ -166,5 +170,5 @@ sudo ./install.sh
 
 sudo chown -R $(logname):$(logname) /home/$(logname)/
 find /home/$(logname) -name '.*' | xargs sudo chown $(logname):$(logname)
-find /home/$(logname) -type f | xargs sudo chmod 700
+find /home/$(logname) -type f | xargs sudo chmod 777
 
