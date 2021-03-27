@@ -97,7 +97,8 @@ sudo chmod --recursive 777 /home/$(logname)/.scripts
 # cd ~/projects/debian-openbox/10_openbox_numix-paper-icons
 # sudo ./install.sh
 
-cd && wget -O wps-office.deb https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/10161/wps-office_11.1.0.10161.XA_amd64.deb
+cd /home/$(logname)/                            
+wget -O wps-office.deb https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/10161/wps-office_11.1.0.10161.XA_amd64.deb
 sudo dpkg -i wps-office.deb
 sudo apt-get -f install && rm wps-office.deb
 cp /home/$(logname)/Bullseye_Box/scripts/install_missing_wps_fonts.sh /home/$(logname)/.scripts
