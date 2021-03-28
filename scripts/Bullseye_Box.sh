@@ -109,9 +109,9 @@ sudo ./install_missing_wps_fonts.sh
 
 mkdir /home/$(logname)/.themes          #ako već ne postoji
 #sudo chown -R $(logname):$(logname) /home/$(logname)/.themes
-#sudo chmod -R 777 /home/$(logname)/.themes
+sudo chmod -R 600 /home/$(logname)/.themes
 folder=$/home/$(logname)/.themes
-git clone "https://gitlab.com/dwt1/dt-dark-theme.git $folder" 
+git clone https://gitlab.com/dwt1/dt-dark-theme.git $folder 
 
 # cd ~/projects/debian-openbox/10_openbox_conky
 # sudo ./install.sh
